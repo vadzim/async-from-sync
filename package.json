@@ -1,0 +1,54 @@
+{
+  "name": "async-from-sync",
+  "version": "0.0.0",
+  "description": "The right way to iterate with for-await-of",
+  "author": "Vadzim Zieńka <vadzim@vadzim.info>",
+  "keywords": [
+    "for-await-of",
+    "for",
+    "await",
+    "of",
+    "async",
+    "sync",
+    "asynchronous",
+    "synchronous",
+    "AsyncIterator",
+    "Iterator",
+    "AsyncGenerator",
+    "Generator"
+  ],
+  "source": "src/index.js",
+  "types": "dist/types/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "esnext": "dist/esnext/index.js",
+  "scripts": {
+    "compile": "module-scripts compile",
+    "clean": "module-scripts clean",
+    "types": "module-scripts types",
+    "build": "module-scripts build",
+    "lint": "module-scripts lint",
+    "lint:fix": "module-scripts lint:fix",
+    "lint:ci": "module-scripts lint:ci",
+    "test": "module-scripts test",
+    "test:debug": "module-scripts test:debug",
+    "coverage": "module-scripts coverage",
+    "allchecks": "module-scripts allchecks",
+    "prepack": "module-scripts prepack",
+    "prepublishOnly": "module-scripts prepublishOnly",
+    "postpublish": "module-scripts postpublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadzim/async-from-sync.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vadzim/async-from-sync/issues"
+  },
+  "homepage": "https://github.com/vadzim/async-from-sync#readme",
+  "devDependencies": {
+    "module-scripts": "0.0.34"
+  },
+  "dependencies": {}
+}
