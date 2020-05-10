@@ -29,6 +29,21 @@ describe("asyncFromSync", () => {
 		).rejects.toEqual(new Error(42))
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
 	})
+
+	test("asyncFromSync waits for return", async () => {
+		expect.assertions(1)
+		await expect(
+			asyncToArray(
+				asyncFromSync(
+					(function* () {
+						yield 2
+						yield 4
+						return Promise.reject(new Error(42))
+					})(),
+				),
+			),
+		).rejects.toEqual(new Error(42))
+	})
 })
 
 describe("asyncWrap", () => {
@@ -51,6 +66,21 @@ describe("asyncWrap", () => {
 			),
 		).rejects.toEqual(new Error(42))
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
+	})
+
+	test("asyncWrap waits for return", async () => {
+		expect.assertions(1)
+		await expect(
+			asyncToArray(
+				asyncWrap(
+					(function* () {
+						yield 2
+						yield 4
+						return Promise.reject(new Error(42))
+					})(),
+				),
+			),
+		).rejects.toEqual(new Error(42))
 	})
 
 	test("asyncWrap does not change async iterator", async () => {
@@ -79,6 +109,21 @@ describe("iteratorWrap", () => {
 			),
 		).rejects.toEqual(new Error(42))
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
+	})
+
+	test("iteratorWrap waits for return", async () => {
+		expect.assertions(1)
+		await expect(
+			asyncToArray(
+				iteratorWrap(
+					(function* () {
+						yield 2
+						yield 4
+						return Promise.reject(new Error(42))
+					})(),
+				),
+			),
+		).rejects.toEqual(new Error(42))
 	})
 
 	test("iteratorWrap does not change async iterator", async () => {
