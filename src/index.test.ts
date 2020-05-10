@@ -19,14 +19,14 @@ describe("asyncFromSync", () => {
 						try {
 							yield 2
 							yield 4
-							yield Promise.reject(new Error(42))
+							yield Promise.reject(new Error("42"))
 						} finally {
 							isCalledOnce()
 						}
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
 	})
 
@@ -38,11 +38,11 @@ describe("asyncFromSync", () => {
 					(function* () {
 						yield 2
 						yield 4
-						return Promise.reject(new Error(42))
+						return Promise.reject(new Error("42"))
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 	})
 })
 
@@ -57,14 +57,14 @@ describe("asyncWrap", () => {
 						try {
 							yield 2
 							yield 4
-							yield Promise.reject(new Error(42))
+							yield Promise.reject(new Error("42"))
 						} finally {
 							isCalledOnce()
 						}
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
 	})
 
@@ -76,11 +76,11 @@ describe("asyncWrap", () => {
 					(function* () {
 						yield 2
 						yield 4
-						return Promise.reject(new Error(42))
+						return Promise.reject(new Error("42"))
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 	})
 
 	test("asyncWrap does not change async iterator", async () => {
@@ -100,14 +100,14 @@ describe("iteratorWrap", () => {
 						try {
 							yield 2
 							yield 4
-							yield Promise.reject(new Error(42))
+							yield Promise.reject(new Error("42"))
 						} finally {
 							isCalledOnce()
 						}
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 		expect(isCalledOnce).toHaveBeenCalledTimes(1)
 	})
 
@@ -119,11 +119,11 @@ describe("iteratorWrap", () => {
 					(function* () {
 						yield 2
 						yield 4
-						return Promise.reject(new Error(42))
+						return Promise.reject(new Error("42"))
 					})(),
 				),
 			),
-		).rejects.toEqual(new Error(42))
+		).rejects.toThrow("42")
 	})
 
 	test("iteratorWrap does not change async iterator", async () => {
