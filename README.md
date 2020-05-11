@@ -6,7 +6,7 @@ This is not a problem if you are developing an app because you know what kind of
 
 But if you are developing a library it can be nice to have the same code to work with both sync and async input. So there is a choice between a simpler code with one `for-await-of` loop which works for most cases but not all and more complex code with type checking and two loops `for-of` and `for-await-of`.
 
-This adapter let's you have one loop which works in all the edge cases.
+This module lets you have one loop which just works.
 
 ```js
 // The following finally section will never be called if generator
@@ -37,7 +37,7 @@ for (const x of generator()) {
 // Error thrown: 43
 ```
 
-This module provides `iteratorWrap` function which fixes that:
+Let's fix that:
 ```js
 import { iteratorWrap } from 'async-from-sync'
 
@@ -51,9 +51,7 @@ for await (const x of iteratorWrap(generator())) {
 // Error thrown: 43
 ```
 
-The same aplies to `yield*` operator if used with sync iterables.
-
-See https://github.com/tc39/ecma262/issues/1849
+The same applies to `yield*` operator if used with sync iterables.
 
 ## API
 
