@@ -1,6 +1,6 @@
 {
   "name": "async-from-sync",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The right way to iterate with for-await-of",
   "author": "Vadzim Zieńka <vadzim@vadzim.info>",
   "keywords": [
