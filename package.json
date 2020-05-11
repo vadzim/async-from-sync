@@ -23,20 +23,20 @@
   "module": "dist/module/index.js",
   "esnext": "dist/esnext/index.js",
   "scripts": {
-    "compile": "module-scripts compile",
-    "clean": "module-scripts clean",
-    "types": "module-scripts types",
-    "build": "module-scripts build",
-    "lint": "module-scripts lint",
-    "lint:fix": "module-scripts lint:fix",
-    "lint:ci": "module-scripts lint:ci",
-    "test": "module-scripts test",
-    "test:debug": "module-scripts test:debug",
-    "coverage": "module-scripts coverage",
-    "allchecks": "module-scripts allchecks",
-    "prepack": "module-scripts prepack",
-    "prepublishOnly": "module-scripts prepublishOnly",
-    "postpublish": "module-scripts postpublish"
+    "compile": "nmx compile",
+    "clean": "nmx clean",
+    "types": "nmx types",
+    "build": "nmx build",
+    "lint": "nmx lint",
+    "lint:fix": "nmx lint:fix",
+    "lint:ci": "nmx lint:ci",
+    "test": "nmx test",
+    "test:debug": "nmx test:debug",
+    "coverage": "nmx coverage",
+    "allchecks": "nmx allchecks",
+    "prepack": "nmx prepack",
+    "prepublishOnly": "nmx prepublishOnly",
+    "postpublish": "nmx postpublish"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/vadzim/async-from-sync#readme",
   "devDependencies": {
-    "module-scripts": "0.0.34"
+    "module-scripts": "^0.0.39"
   },
   "dependencies": {}
 }
