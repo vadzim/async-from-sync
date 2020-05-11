@@ -65,8 +65,7 @@ Returns async iterator. Does convertion if sync iterator is passed.
 
 ### iteratorWrap(iterator: Iterable | AsyncIterable): Iterable | AsyncIterable
 
-Does conversion only if needed. Does not any conversion if javascript engine always call finally blocks of generators.
-Usefull mostly if you need to have a thing that just work:
+Does conversion only if needed. Does not any conversion if javascript engine always calls finally blocks of generators. Usefull if you need to have a thing that just works:
 ```js
 async function F() {
   for await (const x of iteratorWrap(someIterable)) { ... }
