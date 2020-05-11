@@ -1,6 +1,6 @@
 # async-from-sync
 
-Using async `for-await-of` loop to iterate over sync generator is possible, but can cause strange effects (https://bugzilla.mozilla.org/show_bug.cgi?id=1610315) in some edge cases.
+Using async `for-await-of` loop to iterate over sync generator is possible, but can cause strange effects ([https://bugzilla.mozilla.org/show_bug.cgi?id=1610315](https://bugzilla.mozilla.org/show_bug.cgi?id=1610315)) in some edge cases.
 
 This is not a problem if you are developing an app because you know what kind of iterable you have and can use the appropriate loop.
 
